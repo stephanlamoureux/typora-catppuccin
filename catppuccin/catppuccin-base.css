@@ -1,17 +1,15 @@
 :root {
-	/* dark color for background*uu/
-  /* default color */
+  	/* background */
 	--bg-color1: var(--base);
 	/* for most panel, context, header, etc */
 	--bg-color2: var(--crust);
-	/* for toc and table edit panel */
+	/* toc and table edit panel */
 	--bg-color3: rgba(var(--base), 0.5);
-	/* for tips */
+	/* tips */
 	--bg-color4: var(--mantle);
 	/* for blockquote, codeblock, input, etc */
 	--bg-color5: var(--mantle);
-	/* light color for text and icon*/
-	/* default color */
+	/* light color for text and icon */
 	--text-color1: var(--text);
 	/* for text on panel */
 	--text-color2: var(--text);
