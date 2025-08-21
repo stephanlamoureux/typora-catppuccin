@@ -36,19 +36,15 @@
 
 ## Usage
 
-1. Download the flavor of your choice.
-2. Open the app and go to **Preferences** > **Appearance** > **Import theme**.
-3. Select the downloaded flavor file.
+1. Download or clone this repo into the Typora theme folder.
+   - If you are unsure of the location, open Typora and go to **Preferences** > **Appearance** > **Open Theme Folder**.
+2. Make sure you have the catppuccin directory along with each flavor's CSS file.
+3. Select the theme from Typora in **Preferences** > **Appearance**.
 
-<!-- The FAQ section is optional. Remove if needed.-->
-## 🙋 FAQ
-
-- Q: **_"How can I do X?"_**\
-  A: ...
 
 ## 💝 Thanks to
 
-- [Human](https://github.com/catppuccin)
+- [Stephan Lamoureux](https://github.com/stephanlamoureux)
 
 &nbsp;
 
