@@ -41,7 +41,7 @@
 2. Make sure you have the catppuccin directory along with each flavor's CSS file.
 3. Select the theme from Typora in **Preferences** > **Appearance**.
 
-More info can be found in the <a href="https://theme.typora.io/doc/Install-Theme/">Typora docs</a>.
+More info can be found in the <a href="https://theme.typora.io/doc">Typora docs</a>.
 
 ## 💝 Thanks to
 
