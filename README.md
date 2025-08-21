@@ -36,10 +36,11 @@
 
 ## Usage
 
-1. Download or clone this repo into the Typora theme folder.
+1. Download or clone this repo.
+2. Place the files in the Typora theme directory.
    - If you are unsure of the location, open Typora and go to **Preferences** > **Appearance** > **Open Theme Folder**.
-2. Make sure you have the catppuccin directory along with each flavor's CSS file.
-3. Select the theme from Typora in **Preferences** > **Appearance**.
+3. Make sure you have the catppuccin directory along with each flavor's CSS file.
+4. Select the theme from Typora in **Preferences** > **Appearance**.
 
 More info can be found in the <a href="https://theme.typora.io/doc">Typora docs</a>.
 
