@@ -6,9 +6,9 @@
 </h3>
 
 <p align="center">
-	<a href="https://github.com/stephanlamoureux/typora-catppuccin/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/template?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/stephanlamoureux/typora-catppuccin/issues"><img src="https://img.shields.io/github/issues/catppuccin/template?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/stephanlamoureux/typora-catppuccin/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/template?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/stephanlamoureux/typora-catppuccin/stargazers"><img src="https://img.shields.io/github/stars/stephanlamoureux/typora-catppuccin?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/stephanlamoureux/typora-catppuccin/issues"><img src="https://img.shields.io/github/issues/stephanlamoureux/typora-catppuccin?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/stephanlamoureux/typora-catppuccin/contributors"><img src="https://img.shields.io/github/contributors/stephanlamoureux/typora-catppuccin?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
