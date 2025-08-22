@@ -1,0 +1,28 @@
+:root {
+  --rosewater-rgb: 245,224,220; --rosewater: rgb(var(--rosewater-rgb));
+  --flamingo-rgb: 242,205,205; --flamingo: rgb(var(--flamingo-rgb));
+  --pink-rgb: 245,194,231; --pink: rgb(var(--pink-rgb));
+  --mauve-rgb: 203,166,247; --mauve: rgb(var(--mauve-rgb));
+  --red-rgb: 243,139,168; --red: rgb(var(--red-rgb));
+  --maroon-rgb: 235,160,172; --maroon: rgb(var(--maroon-rgb));
+  --peach-rgb: 250,179,135; --peach: rgb(var(--peach-rgb));
+  --yellow-rgb: 249,226,175; --yellow: rgb(var(--yellow-rgb));
+  --green-rgb: 166,227,161; --green: rgb(var(--green-rgb));
+  --teal-rgb: 148,226,213; --teal: rgb(var(--teal-rgb));
+  --sky-rgb: 137,220,235; --sky: rgb(var(--sky-rgb));
+  --sapphire-rgb: 116,199,236; --sapphire: rgb(var(--sapphire-rgb));
+  --blue-rgb: 137,180,250; --blue: rgb(var(--blue-rgb));
+  --lavender-rgb: 180,190,254; --lavender: rgb(var(--lavender-rgb));
+  --text-rgb: 205,214,244; --text: rgb(var(--text-rgb));
+  --subtext1-rgb: 186,194,222; --subtext1: rgb(var(--subtext1-rgb));
+  --subtext0-rgb: 166,173,200; --subtext0: rgb(var(--subtext0-rgb));
+  --overlay2-rgb: 147,153,178; --overlay2: rgb(var(--overlay2-rgb));
+  --overlay1-rgb: 127,132,156; --overlay1: rgb(var(--overlay1-rgb));
+  --overlay0-rgb: 108,112,134; --overlay0: rgb(var(--overlay0-rgb));
+  --surface2-rgb: 88,91,112; --surface2: rgb(var(--surface2-rgb));
+  --surface1-rgb: 69,71,90; --surface1: rgb(var(--surface1-rgb));
+  --surface0-rgb: 49,50,68; --surface0: rgb(var(--surface0-rgb));
+  --base-rgb: 30,30,46; --base: rgb(var(--base-rgb));
+  --mantle-rgb: 24,24,37; --mantle: rgb(var(--mantle-rgb));
+  --crust-rgb: 17,17,27; --crust: rgb(var(--crust-rgb));
+}

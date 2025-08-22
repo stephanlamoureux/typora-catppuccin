@@ -12,35 +12,35 @@
 </p>
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/preview.webp"/>
+	<img src="./assets/preview.webp"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/latte.webp"/>
+<img src="./assets/latte.png"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/frappe.webp"/>
+<img src="./assets/frappe.png"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/macchiato.webp"/>
+<img src="./assets/macchiato.png"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/mocha.webp"/>
+<img src="./assets/mocha.png"/>
 </details>
 
 ## Usage
 
 1. Download or clone this repo.
-2. Place the files in the Typora theme directory.
-   - If you are unsure of the location, open Typora and go to **Preferences** > **Appearance** > **Open Theme Folder**.
-3. Make sure you have the catppuccin directory along with each flavor's CSS file.
-4. Select the theme from Typora in **Preferences** > **Appearance**.
+2. Place the contents of the `theme` dir into the Typora theme directory.
+   - Open Typora and go to **Preferences** > **Appearance** > **Open Theme Folder**.
+   - Make sure you have the catppuccin directory along with each flavor's CSS file.
+3. Select the theme from Typora in **Preferences** > **Appearance**.
 
 More info can be found in the <a href="https://theme.typora.io/doc">Typora docs</a>.
 

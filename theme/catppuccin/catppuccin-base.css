@@ -1,14 +1,16 @@
 :root {
-  	/* background */
+  	/* --- background colors --- */
 	--bg-color1: var(--base);
 	/* for most panel, context, header, etc */
 	--bg-color2: var(--crust);
 	/* toc and table edit panel */
-	--bg-color3: rgba(var(--base), 0.5);
+	--bg-color3: rgba(var(--base-rgb), 0.5);
 	/* tips */
 	--bg-color4: var(--mantle);
 	/* for blockquote, codeblock, input, etc */
 	--bg-color5: var(--mantle);
+
+	/* --- text colors --- */
 	/* light color for text and icon */
 	--text-color1: var(--text);
 	/* for text on panel */
@@ -18,21 +20,24 @@
 	/* for tips */
 	--text-color4: var(--subtext1);
 	/* for focus mode */
-	--text-color5: rgba(var(--surface1), 0.5);
+	--text-color5: rgba(var(--surface1-rgb), 0.5);
 	/* link color */
 	--link-color: var(--blue);
-	/* table color */
+
+	/* --- table colors --- */
 	--table-border-color: var(--surface2);
 	--table-thead-color: var(--mantle);
 	--table-bg-color: var(--base);
 	--table-bg-darker-color: var(--mantle);
-	/* hover color */
+
+	/* --- hover colors --- */
 	/* default hover background color */
 	--hover-bg-color1: var(--surface0);
 	/* for input item */
 	--hover-bg-color2: var(--crust);
 	/* default hover text color */
-	--hover-bg-color3: rgba(var(--surface0), 0.8);
+	--hover-bg-color3: rgba(var(--surface0-rgb), 0.8);
+
 	/* default hover text color */
 	--hover-text-color: var(--mauve);
 	/* active color */
@@ -43,7 +48,7 @@
 	--menu-divider-color: var(--surface2);
 	/* scrollbar color */
 	--scrollbar-thumb-color: var(--menu-divider-color);
-	--scrollbar-track-color: rgba(var(--overlay2), 0.3);
+	--scrollbar-track-color: rgba(var(--overlay2-rgb), 0.3);
 	/* theme select color */
 	--theme-select-color: rgba(255, 255, 255, 0.5);
 	--button-color: var(--surface0);
@@ -51,7 +56,8 @@
 	/* focus color */
 	--focus-color: rgba(100, 100, 100, 0.8);
 	--focus-ring-color: var(--focus-color);
-	/* codeblock color */
+
+	/* --- codeblocks --- */
 	--code-red-color: var(--red);
 	--code-yellow-color: var(--yellow);
 	--code-cyan-color: var(--teal);
@@ -60,9 +66,9 @@
 	--code-orange-color: var(--peach);
 	--code-green-color: var(--green);
 	--code-grey-color: var(--surface2);
-
 	--code-select-bg-color: var(--surface1);
 	--code-cursor-color: var(--blue);
+
 	/* implicit selection text bg color */
 	--select-text-bg-color: var(--surface1);
 	/* implicit button color */
@@ -80,7 +86,7 @@
 	--item-hover-bg-color: var(--hover-bg-color1);
 	--item-hover-text-color: var(--hover-text-color);
 	/* implicit active color */
-	--active-file-bg-color: var(--hover-bg-color);
+	--active-file-bg-color: var(--hover-bg-color1);
 	/* implicit mathjax edit panel background color */
 	--rawblock-edit-panel-bd: var(--bg-color5);
 	/* implicit focus mode color */
@@ -104,28 +110,28 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: normal;
-	src: local('Open Sans Regular'), url('./onedark/400.woff') format('woff');
+	src: local('Open Sans Regular'), url('./400.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Open Sans';
 	font-style: italic;
 	font-weight: normal;
-	src: local('Open Sans Italic'), url('./onedark/400i.woff') format('woff');
+	src: local('Open Sans Italic'), url('./400i.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: bold;
-	src: local('Open Sans Bold'), url('./onedark/700.woff') format('woff');
+	src: local('Open Sans Bold'), url('./700.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Open Sans';
 	font-style: italic;
 	font-weight: bold;
-	src: local('Open Sans Bold Italic'), url('./onedark/700i.woff') format('woff');
+	src: local('Open Sans Bold Italic'), url('./700i.woff') format('woff');
 }
 
 /* basic style */
@@ -143,7 +149,7 @@ body {
 
 /* text selection background color */
 .in-text-selection {
-	background-color: --select-text-bg-color;
+	background-color: var(--select-text-bg-color);
 }
 
 /* link */
@@ -155,7 +161,7 @@ body {
 	color: var(--hover-text-color) !important;
 }
 
-/* h1-h6 */
+/* --- Headings --- */
 #write h1,
 #write h2,
 #write h3,
@@ -165,7 +171,7 @@ body {
 	margin-top: 0.5em;
 	margin-bottom: 0em;
 	line-height: 1em;
-	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+	text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
 	padding-top: 0.3em;
 }
 
@@ -175,20 +181,12 @@ body {
 	border-bottom: 3px double var(--text-color5);
 }
 
-/* #write h1:before {
-  content: "\00A7  ";
-}
- */
 #write h2 {
 	font-size: 2em;
 	padding-bottom: 0.5em;
 	border-bottom: 3px double var(--text-color5);
 }
 
-/* #write h2:before {
-  content: "\00A7  ";
-}
- */
 #write h3 {
 	font-size: 1.75em;
 	padding-bottom: 0.5em;
@@ -207,37 +205,34 @@ body {
 	font-size: 1.2em;
 }
 
-/* horizontal divider */
 hr {
 	height: 1px;
 	background-color: var(--text-color5);
 	border: 0px;
 }
 
-/* list */
 ul,
 ol {
 	padding-left: 30px;
 }
 
-/* blockquote */
 blockquote {
 	border-left: 4px solid var(--text-color1);
 	padding: 4px 15px;
 	color: var(--text-color1);
 	background-color: var(--bg-color5);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 blockquote blockquote {
 	padding-right: 0em;
 }
 
-/* table */
+/* --- tables --- */
 .md-rawblock > .md-rawblock-container table,
 .md-table-fig,
 .md-table-fig:active {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 table thead tr {
@@ -314,7 +309,7 @@ table tr td:last-child {
 /* adjusting table panel */
 .popover {
 	background-color: var(--bg-color2);
-	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* arrow of adjusting table panel */
@@ -370,16 +365,9 @@ table tr td:last-child {
 sup.md-footnote {
 	color: var(--text-color1);
 	background-color: var(--bg-color2);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* mathjax */
-/* .mathjax-block>.code-tooltip {
-    bottom: .375rem;
-}
-.md-mathjax-midline {
-    background: #fafafa;
-} */
 .md-inline-math script {
 	color: var(--text-color1);
 }
@@ -419,7 +407,7 @@ input {
 	background-color: var(--input-color) !important;
 	border: 0px !important;
 	border-radius: 6px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* input hover */
@@ -439,7 +427,7 @@ input[type='checkbox']:before {
 	background-color: var(--input-color);
 	margin-top: -0.5rem;
 	margin-left: -0.2rem;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* checkbox hover */
@@ -479,7 +467,7 @@ input[type='radio']:before {
 	background-color: var(--input-color);
 	margin-top: -0.4rem;
 	margin-left: -0.1rem;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* radio hover */
@@ -499,7 +487,7 @@ input[type='radio']:checked:before {
 }
 
 /* radio checked hover*/
-input[type='radio']:checked:before {
+input[type='radio']:checked:hover:before {
 	content: '\25CF';
 	font-size: 1rem;
 	line-height: 1rem;
@@ -522,7 +510,7 @@ input[type='radio']:checked:before {
 
 /* shadow for image item*/
 .md-image img {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* toc */
@@ -532,7 +520,7 @@ input[type='radio']:checked:before {
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 	border: 0px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* toc content */
@@ -547,7 +535,7 @@ input[type='radio']:checked:before {
 .md-toc:focus .md-toc-content {
 	border: 0px;
 	margin: 0px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* toc item */
@@ -586,7 +574,7 @@ input[type='radio']:checked:before {
 
 /* html block */
 .md-htmlblock:hover .md-htmlblock-container {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 	border-radius: 6px;
 	border-top-right-radius: 0px;
 }
@@ -595,7 +583,7 @@ input[type='radio']:checked:before {
 #md-searchpanel {
 	background-color: var(--bg-color2);
 	color: var(--text-color2);
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* ignore case button and find whole word button */
@@ -642,12 +630,6 @@ input[type='radio']:checked:before {
 .sidebar-menu {
 	color: var(--text-color2);
 }
-
-/* sidebar shadow */
-/* #typora-sidebar,
-.typora-node #typora-sidebar {
-	box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.5);
-} */
 
 /* divider between file item and search */
 .ty-sidebar-search-panel {
@@ -699,7 +681,7 @@ input[type='radio']:checked:before {
 /* sidebar file menu */
 #sidebar-files-menu {
 	border: 0px;
-	box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* sidebar file menu item */
@@ -736,7 +718,6 @@ input[type='radio']:checked:before {
 	border: 0px;
 	font-weight: bold;
 	background-color: var(--bg-color2);
-	/* box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.5); */
 }
 
 .html-for-mac .sidebar-content {
@@ -745,9 +726,7 @@ input[type='radio']:checked:before {
 
 /* sidebar footer */
 .sidebar-footer {
-	border: 0px;
-	/* box-shadow: 0 -4px 10px -5px rgba(0, 0, 0, 0.5); */
-}
+	border: 0px;}
 
 /* remove outline when file item in treeview is selected*/
 .file-library-node:not(.file-node-root):focus > .file-node-content {
@@ -763,13 +742,13 @@ input[type='radio']:checked:before {
 /* setting */
 /* header in setting */
 .window-header {
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5) !important;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* sidebar in setting */
 .sidebar {
 	background-color: var(--bg-color2) !important;
-	box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
 .list-group-content {
@@ -804,7 +783,7 @@ div[data-index='2'] .label-input-group td:last-child div {
 	border: 0px !important;
 	border-radius: 6px;
 	background-color: var(--bg-color5);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 	margin: 10px !important;
 }
 
@@ -812,7 +791,7 @@ div[data-index='2'] .label-input-group td:last-child div {
 .ty-preferences button.btn-default {
 	border: 0px;
 	background-color: var(--bg-color5);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 	border-radius: 6px;
 }
 
@@ -839,7 +818,7 @@ div[data-index='2'] .label-input-group td:last-child div {
 
 .search-input:focus {
 	border: none !important;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* select item (mostly in setting menu) */
@@ -849,7 +828,7 @@ select {
 	background-color: var(--input-color) !important;
 	padding-top: 5px !important;
 	padding-bottom: 5px !important;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* enabled select item hover */
@@ -885,7 +864,7 @@ select[disabled]:hover {
 /* mega menu sidebar*/
 .megamenu-menu {
 	background-color: var(--bg-color2);
-	box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* return button in mega menu */
@@ -918,7 +897,7 @@ select[disabled]:hover {
 	border: 0px;
 	background-color: var(--bg-color5);
 	color: var(--text-color1);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 	margin-bottom: 10px;
 	margin-left: 10px;
 }
@@ -929,13 +908,13 @@ select[disabled]:hover {
 }
 
 #recent-document-table {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 #recent-file-panel-action-btn {
 	background: var(--bg-color5);
 	border: 0px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 #recent-file-panel thead tr {
@@ -957,7 +936,7 @@ select[disabled]:hover {
 
 /* theme preview */
 .theme-preview-div {
-	box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.8);
+	box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.8);
 }
 
 /* theme preview hover */
@@ -969,7 +948,7 @@ select[disabled]:hover {
 .dropdown-menu:not(.megamenu-menu-list) {
 	background-color: var(--bg-color2);
 	color: var(--text-color2);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* divider in context menu and spell check panel */
@@ -987,7 +966,7 @@ footer.ty-footer {
 	border-top: 0px !important;
 	background-color: var(--bg-color2) !important;
 	/*     color: var(--text-color2); */
-	box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* footer item */
@@ -1093,7 +1072,7 @@ footer.ty-footer {
 #md-notification {
 	background-color: var(--bg-color2) !important;
 	color: var(--text-color2);
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 #ty-surpress-mode-warning-close-btn {
@@ -1112,7 +1091,7 @@ code {
 	border-radius: 6px;
 	padding: 4px 4px 4px 4px;
 	margin: 0px 0px 0px 0px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* codeblock */
@@ -1123,7 +1102,7 @@ code {
 	padding: 8px 4px 8px 4px !important;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 .md-fences .code-tooltip {
@@ -1356,7 +1335,7 @@ code {
 pre.md-meta-block,
 pre.md-meta-block:active {
 	background-color: var(--bg-color5);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 	border-radius: 6px;
 	padding: 10px;
 	padding-left: 20px;
@@ -1453,7 +1432,7 @@ pre.md-meta-block:active {
 
 .modal-content .form-control,
 .modal-content .form-control:focus {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* zoom  */
@@ -1516,7 +1495,7 @@ pre.md-meta-block:active {
 /* language selection for codeblock */
 .auto-suggest-container {
 	border: 0px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 	background-color: var(--bg-color2);
 }
 
@@ -2071,7 +2050,7 @@ kbd {
 	background: var(--bg-color5);
 	border: none;
 	border-radius: 6px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 .export-items-list-control {
