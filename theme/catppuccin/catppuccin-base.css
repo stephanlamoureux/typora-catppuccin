@@ -401,10 +401,10 @@ input {
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* --- input --- */
+/* input hover */
 /* input:hover {
     background-color: var(--hover-bg-color2) !important;
-} *
+} */
 
 /* checkbox */
 input[type='checkbox']:before {
@@ -957,6 +957,7 @@ select[disabled]:hover {
 footer.ty-footer {
 	border-top: 0px !important;
 	background-color: var(--bg-color1) !important;
+	/*     color: var(--text-color2); */
 }
 
 /* footer item */
@@ -1530,24 +1531,78 @@ pre.md-meta-block:active {
 .node ellipse,
 .node polygon,
 .node path {
-	fill: var(--bg-color2) !important;
-	stroke: var(--menu-divider-color) !important;
+	fill: var(--node-fill) !important;
+	stroke: var(--node-border) !important;
 }
 
 .edgePath .path {
 	stroke: var(--menu-divider-color) !important;
 }
 
+/* Mermaid v10 edge path */
+.md-fences[lang='mermaid'] svg path.flowchart-link {
+  stroke: var(--menu-divider-color) !important;
+  fill: none !important;
+}
+
 .edgePath .arrowheadPath {
 	fill: var(--menu-divider-color) !important;
 }
 
-.label {
-	color: var(--text-color1) !important;
+/* Arrowheads drawn via <marker> */
+.md-fences[lang='mermaid'] svg marker path {
+  fill: var(--menu-divider-color) !important;
+  stroke: var(--menu-divider-color) !important;
 }
 
+
 .edgeLabel rect {
-	fill: transparent !important;
+  fill: none !important;   /* hide SVG box to avoid ghost boxes */
+  stroke: none !important;
+}
+
+.edgeLabel text,
+.edgeLabel tspan {
+  fill: var(--text-color1) !important;
+  color: var(--text-color1) !important;
+  font-weight: 500;
+}
+
+/* Consolidated Mermaid label colors (SVG + foreignObject) */
+.md-fences[lang='mermaid'] svg text,
+.md-fences[lang='mermaid'] svg tspan,
+.md-fences[lang='mermaid'] svg .label text,
+.md-fences[lang='mermaid'] svg .label tspan,
+.md-fences[lang='mermaid'] svg .nodeLabel text,
+.md-fences[lang='mermaid'] svg .nodeLabel tspan {
+  fill: var(--text-color1) !important;
+}
+
+.md-fences[lang='mermaid'] svg foreignObject,
+.md-fences[lang='mermaid'] svg foreignObject div,
+.md-fences[lang='mermaid'] svg .nodeLabel,
+.md-fences[lang='mermaid'] svg .nodeLabel div,
+.md-fences[lang='mermaid'] svg .label div,
+.md-fences[lang='mermaid'] svg .edgeLabel foreignObject > div {
+  color: var(--text-color1) !important;
+}
+
+/* Edge labels rendered via foreignObject (Mermaid v9/v10, all diagram types) */
+.md-fences[lang='mermaid'] svg g.edgeLabel foreignObject > div,
+.md-fences[lang='mermaid'] svg .edgeLabel foreignObject > div {
+  background-color: transparent !important; /* no background */
+  color: var(--text-color1) !important;     /* readable text */
+  padding: 0 !important;                    /* avoid added size */
+  border: none !important;                  /* no border */
+  border-radius: 0 !important;              /* no rounding */
+  line-height: 1.2;
+  box-shadow: none !important;
+}
+
+/* Hide truly empty foreignObject labels to avoid tiny ghost boxes */
+.md-fences[lang='mermaid'] svg g.edgeLabel foreignObject > div:empty,
+.md-fences[lang='mermaid'] svg .edgeLabel foreignObject > div:empty {
+  display: none !important;
 }
 
 .cluster rect {
@@ -1619,7 +1674,7 @@ rect[class*='activation'] {
 	fill: var(--text-color1) !important;
 }
 
-rect.rect {
+pre[mermaid-type='sequence'] svg rect.rect {
 	fill: var(--bg-color3);
 }
 
@@ -1649,7 +1704,6 @@ g.classGroup line {
 #compositionEnd path,
 #aggregationStart path,
 #aggregationEnd path,
-#dependencyStart path,
 #dependencyStart path,
 #extensionStart path,
 #extensionEnd path {
@@ -1682,13 +1736,11 @@ g.classGroup line {
 }
 
 .stateGroup .composit {
-	/*   fill: rgb(36,40,47) !important; */
-	fill: hsl(218, 13%, 17%) !important;
+	fill: var(--bg-color2) !important;
 }
 
 .stateGroup .alt-composit {
-	/*   fill: rgb(36,40,47) !important; */
-	fill: hsl(218, 13%, 16.5%) !important;
+	fill: var(--bg-color3) !important;
 }
 
 .state-note rect {
@@ -1727,7 +1779,6 @@ circle.state-end {
 .divider {
 	stroke: var(--menu-divider-color) !important;
 	fill: var(--bg-color5) !important;
-	fill: hsl(218, 13%, 13.5%) !important;
 }
 
 rect.fork-join {
@@ -1749,14 +1800,12 @@ rect.fork-join {
 }
 
 .statediagram-cluster .inner {
-	/*   fill: var(--bg-color2) !important; */
-	fill: hsl(218, 13%, 16.5%) !important;
+	fill: var(--bg-color2) !important;
 	stroke: var(--menu-divider-color) !important;
 }
 
 .statediagram-cluster-alt .inner {
-	/*   fill: var(--bg-color5) !important; */
-	fill: hsl(218, 13%, 16%) !important;
+	fill: var(--bg-color3) !important;
 	stroke: var(--menu-divider-color) !important;
 }
 
@@ -1863,6 +1912,7 @@ text.sectionTitle tspan {
 	fill: var(--text-color1) !important;
 }
 
+
 .section0,
 .section2 {
 	fill: var(--bg-color4) !important;
@@ -1881,12 +1931,6 @@ text.sectionTitle tspan {
 	stroke: rgb(80, 84, 90) !important;
 }
 
-taskText0,
-.taskText1,
-.taskText2,
-.taskText3 {
-	fill: var(--text-color2) !important;
-}
 
 .active0,
 .active1,
@@ -1894,13 +1938,6 @@ taskText0,
 .active3 {
 	fill: rgb(100, 104, 110) !important;
 	stroke: rgb(100, 104, 110) !important;
-}
-
-.activeText0,
-.activeText1,
-.activeText2,
-.activeText3 {
-	fill: var(--text-color2) !important;
 }
 
 .done0,
@@ -1935,17 +1972,6 @@ taskText0,
 	stroke: var(--text-color1) !important;
 }
 
-.taskTextOutside0,
-.taskTextOutside1,
-.taskTextOutside2,
-.taskTextOutside3 {
-	fill: var(--text-color1) !important;
-}
-
-.grid text {
-	fill: var(--text-color1) !important;
-}
-
 .today {
 	stroke: var(--text-color1) !important;
 }
@@ -1963,13 +1989,8 @@ g.legend > rect {
 	stroke: var(--bg-color) !important;
 }
 
-g > path {
-	stroke: var(--bg-color) !important;
-}
-
-g > text.slice {
-	fill: var(--bg-color) !important;
-}
+pre[mermaid-type='pie'] svg g > path { stroke: var(--bg-color) !important; }
+pre[mermaid-type='pie'] svg g > text.slice { fill: var(--bg-color) !important; }
 
 /* flow diagram */
 .md-fences[lang='flow'] .md-diagram-panel-preview rect {
