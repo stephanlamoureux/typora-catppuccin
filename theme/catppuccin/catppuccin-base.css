@@ -964,9 +964,8 @@ select[disabled]:hover {
 /* footer */
 footer.ty-footer {
 	border-top: 0px !important;
-	background-color: var(--bg-color2) !important;
+	background-color: var(--bg-color1) !important;
 	/*     color: var(--text-color2); */
-	box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* footer item */
