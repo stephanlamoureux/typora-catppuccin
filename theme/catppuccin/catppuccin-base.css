@@ -9,7 +9,6 @@
 	--bg-color4: var(--mantle);
 	/* for blockquote, codeblock, input, etc */
 	--bg-color5: var(--mantle);
-
 	/* --- text colors --- */
 	/* light color for text and icon */
 	--text-color1: var(--text);
@@ -23,13 +22,11 @@
 	--text-color5: rgba(var(--surface1-rgb), 0.5);
 	/* link color */
 	--link-color: var(--blue);
-
 	/* --- table colors --- */
 	--table-border-color: var(--surface2);
 	--table-thead-color: var(--mantle);
 	--table-bg-color: var(--base);
 	--table-bg-darker-color: var(--mantle);
-
 	/* --- hover colors --- */
 	/* default hover background color */
 	--hover-bg-color1: var(--surface0);
@@ -37,7 +34,6 @@
 	--hover-bg-color2: var(--crust);
 	/* default hover text color */
 	--hover-bg-color3: rgba(var(--surface0-rgb), 0.8);
-
 	/* default hover text color */
 	--hover-text-color: var(--mauve);
 	/* active color */
@@ -56,7 +52,6 @@
 	/* focus color */
 	--focus-color: rgba(100, 100, 100, 0.8);
 	--focus-ring-color: var(--focus-color);
-
 	/* --- codeblocks --- */
 	--code-red-color: var(--red);
 	--code-yellow-color: var(--yellow);
@@ -68,7 +63,6 @@
 	--code-grey-color: var(--surface2);
 	--code-select-bg-color: var(--surface1);
 	--code-cursor-color: var(--blue);
-
 	/* implicit selection text bg color */
 	--select-text-bg-color: var(--surface1);
 	/* implicit button color */
@@ -93,12 +87,10 @@
 	--blur-text-color: var(--text-color5);
 	/* implicit search result select color */
 	--search-select-bg-color: var(--surface1);
-
 	--control-text-hover-color: var(--hover-text-color);
 	/* implicit active file color in sidebar file menu treeview */
 	--active-file-text-color: var(--hover-text-color);
 	--active-file-border-color: var(--hover-text-color);
-
 	--node-border: var(--menu-divider-color);
 	--node-fill: var(--bg-color2);
 	/* implicit border color in export menu of setting */
@@ -171,26 +163,25 @@ body {
 	margin-top: 0.5em;
 	margin-bottom: 0em;
 	line-height: 1em;
-	text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+	text-shadow: none;
 	padding-top: 0.3em;
 }
 
 #write h1 {
 	font-size: 2.5em;
 	padding-bottom: 0.5em;
-	border-bottom: 3px double var(--text-color5);
+	border-bottom: 3px solid var(--text-color5);
 }
 
 #write h2 {
 	font-size: 2em;
 	padding-bottom: 0.5em;
-	border-bottom: 3px double var(--text-color5);
+	border-bottom: 2px solid var(--text-color5);
 }
 
 #write h3 {
 	font-size: 1.75em;
 	padding-bottom: 0.5em;
-	border-bottom: 1px solid var(--text-color5);
 }
 
 #write h4 {
@@ -410,10 +401,11 @@ input {
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* input hover */
+/* --- input --- */
 /* input:hover {
     background-color: var(--hover-bg-color2) !important;
-} */
+} *
+
 /* checkbox */
 input[type='checkbox']:before {
 	content: '';
@@ -739,7 +731,7 @@ input[type='radio']:checked:hover:before {
 	color: var(--hover-text-color);
 }
 
-/* setting */
+/* --- settings --- */
 /* header in setting */
 .window-header {
 	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5) !important;
@@ -965,7 +957,6 @@ select[disabled]:hover {
 footer.ty-footer {
 	border-top: 0px !important;
 	background-color: var(--bg-color1) !important;
-	/*     color: var(--text-color2); */
 }
 
 /* footer item */
@@ -1016,24 +1007,24 @@ footer.ty-footer {
 }
 
 /* scrollbar */
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
 	width: 8px;
 	padding-right: 10px;
 	background-color: rgba(0, 0, 0, 0);
-} */
+}
 
 /* scrollbar track */
-/* ::-webkit-scrollbar-track:hover {
+::-webkit-scrollbar-track:hover {
 	background-color: var(--scrollbar-track-color) !important;
 	border-radius: 4px;
-} */
+}
 
 /* scrollbar thumb */
-/* ::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb:active {
 	background-color: var(--scrollbar-thumb-color) !important;
 	border-radius: 4px;
-} */
+}
 
 /* tip when hover on a button */
 #ty-tooltip {

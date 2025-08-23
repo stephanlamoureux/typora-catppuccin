@@ -26,13 +26,3 @@
   --mantle-rgb: 230,233,239; --mantle: rgb(var(--mantle-rgb));
   --crust-rgb: 220,224,232; --crust: rgb(var(--crust-rgb));
 }
-
-/* --- Headings --- */
-#write h1,
-#write h2,
-#write h3,
-#write h4,
-#write h5,
-#write h6 {
-	text-shadow: none
-}
