@@ -1556,7 +1556,6 @@ pre.md-meta-block:active {
   stroke: var(--menu-divider-color) !important;
 }
 
-
 .edgeLabel rect {
   fill: none !important;   /* hide SVG box to avoid ghost boxes */
   stroke: none !important;
@@ -1913,7 +1912,6 @@ text.sectionTitle tspan {
 	fill: var(--text-color1) !important;
 }
 
-
 .section0,
 .section2 {
 	fill: var(--bg-color4) !important;
@@ -1931,7 +1929,6 @@ text.sectionTitle tspan {
 	fill: rgb(80, 84, 90) !important;
 	stroke: rgb(80, 84, 90) !important;
 }
-
 
 .active0,
 .active1,
@@ -1975,6 +1972,25 @@ text.sectionTitle tspan {
 
 .today {
 	stroke: var(--text-color1) !important;
+}
+
+/* Gantt labels: override Mermaid's chart-specific black !important rules */
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) text.taskText,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) text.taskText tspan,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .taskText0,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .taskText1,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .taskText2,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .taskText3,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .doneText0,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .doneText1,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .doneText2,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .doneText3,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText0,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText1,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText2,
+.md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText3 {
+  fill: var(--text-color1) !important;
+  color: var(--text-color1) !important;
 }
 
 /* mermaid pie chart */
