@@ -93,6 +93,12 @@
 	--active-file-border-color: var(--hover-text-color);
 	--node-border: var(--menu-divider-color);
 	--node-fill: var(--bg-color2);
+	--pie-text: var(--text-color1);
+	--gantt-task-text: var(--text-color1);
+	--gantt-task: rgb(80, 84, 90);
+	--gantt-active: rgb(100, 104, 110);
+	--gantt-done: rgb(48, 51, 58);
+	--gantt-crit: rgb(150, 150, 150);
 	/* implicit border color in export menu of setting */
 	--border-color: var(--menu-divider-color);
 }
@@ -321,30 +327,30 @@ table tr td:last-child {
 
 /* existing thread grid */
 .md-grid-board tr[row='1'] .md-grid-ext {
-	background-color: rgb(60, 60, 60);
+	background-color: var(--surface2);
 }
 
 /* not existing thread grid */
 .md-grid-board tr[row='1'] {
-	background-color: rgb(220, 220, 220);
+	background-color: var(--surface0);
 }
 
 /* existing grid */
 .md-grid-board .md-grid-ext {
-	background-color: rgb(120, 120, 120);
+	background-color: var(--surface1);
 }
 
 /* selected thread grid */
 .md-grid-board tr[row='1'] a.md-active,
 .md-grid-board tr[row='1'] a:hover {
-	background-color: rgb(60, 60, 60);
+	background-color: var(--surface2);
 }
 
 /* selected grid */
 .md-grid-board a.md-active,
 .md-grid-board a:hover {
 	border-color: var(--menu-divider-color);
-	background-color: rgb(120, 120, 120);
+	background-color: var(--surface1);
 }
 
 /* task */
@@ -400,11 +406,6 @@ input {
 	border-radius: 6px;
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* input hover */
-/* input:hover {
-    background-color: var(--hover-bg-color2) !important;
-} */
 
 /* checkbox */
 input[type='checkbox']:before {
@@ -1156,7 +1157,6 @@ code {
 
 .cm-s-inner .cm-comment,
 .cm-s-inner.cm-comment {
-	/*     color: var(--code-orange-color) !important; */
 	color: var(--code-grey-color) !important;
 	font-style: italic;
 }
@@ -1165,7 +1165,6 @@ code {
 .cm-s-inner .cm-def,
 .cm-s-inner.cm-header,
 .cm-s-inner.cm-def {
-	/*     color: var(--code-red-color) !important; */
 	color: var(--code-blue-color) !important;
 }
 
@@ -1175,7 +1174,6 @@ code {
 }
 
 .cm-s-inner .cm-builtin {
-	/*     color: var(--code-blue-color) !important; */
 	color: var(--code-cyan-color) !important;
 }
 
@@ -1192,7 +1190,6 @@ code {
 }
 
 .cm-s-inner .cm-variable-2 {
-	/*     color: var(--code-blue-color) !important; */
 	color: var(--code-yellow-color) !important;
 }
 
@@ -1202,7 +1199,6 @@ code {
 }
 
 .cm-s-typora-default .cm-string {
-	/*     color: var(--code-blue-color); */
 	color: var(--code-purple-color);
 }
 
@@ -1230,19 +1226,16 @@ code {
 }
 
 .cm-s-typora-default .cm-tag {
-	/*     color: var(--code-red-color); */
 	color: var(--code-blue-color);
 }
 
 .cm-s-typora-default .cm-strong,
 .cm-s-typora-default .cm-em,
 .cm-s-typora-default .cm-del {
-	/*     color: var(--code-green-color); */
 	color: var(--code-orange-color);
 }
 
 .cm-s-typora-default .cm-block-start.cm-variable-2 {
-	/*     color: var(--code-orange-color); */
 	color: var(--code-red-color);
 }
 
@@ -1367,17 +1360,6 @@ pre.md-meta-block:active {
 	visibility: hidden;
 	opacity: 0;
 }
-
-/* #md-searchpanel {
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s !important;
-}
-
-.on-search-panel-open #md-searchpanel {
-    visibility: visible;
-    opacity: 1;
-} */
 
 .uni-preference-panel {
 	display: block;
@@ -1649,7 +1631,7 @@ rect[class*='activation'] {
 
 .labelBox {
 	fill: var(--bg-color2) !important;
-	stroke: rgb(150, 150, 150) !important;
+	stroke: var(--menu-divider-color) !important;
 }
 
 .labelText {
@@ -1662,7 +1644,7 @@ rect[class*='activation'] {
 }
 
 .loopLine {
-	stroke: rgb(180, 180, 180) !important;
+  stroke: var(--menu-divider-color) !important;
 }
 
 .note {
@@ -1926,31 +1908,31 @@ text.sectionTitle tspan {
 .task1,
 .task2,
 .task3 {
-	fill: rgb(80, 84, 90) !important;
-	stroke: rgb(80, 84, 90) !important;
+	fill: var(--gantt-task) !important;
+	stroke: var(--gantt-task) !important;
 }
 
 .active0,
 .active1,
 .active2,
 .active3 {
-	fill: rgb(100, 104, 110) !important;
-	stroke: rgb(100, 104, 110) !important;
+	fill: var(--gantt-active) !important;
+	stroke: var(--gantt-active) !important;
 }
 
 .done0,
 .done1,
 .done2,
 .done3 {
-	fill: rgb(48, 51, 58) !important;
-	stroke: rgb(48, 51, 58) !important;
+	fill: var(--gantt-done) !important;
+	stroke: var(--gantt-done) !important;
 }
 
 .crit0,
 .crit1,
 .crit2,
 .crit3 {
-	fill: rgb(150, 150, 150) !important;
+	fill: var(--gantt-crit) !important;
 	stroke: var(--text-color1) !important;
 }
 
@@ -1958,7 +1940,7 @@ text.sectionTitle tspan {
 .activeCrit1,
 .activeCrit2,
 .activeCrit3 {
-	fill: rgb(100, 104, 110) !important;
+	fill: var(--gantt-active) !important;
 	stroke: var(--text-color1) !important;
 }
 
@@ -1966,7 +1948,7 @@ text.sectionTitle tspan {
 .doneCrit1,
 .doneCrit2,
 .doneCrit3 {
-	fill: rgb(48, 51, 58) !important;
+	fill: var(--gantt-done) !important;
 	stroke: var(--text-color1) !important;
 }
 
@@ -1989,8 +1971,8 @@ text.sectionTitle tspan {
 .md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText1,
 .md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText2,
 .md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText3 {
-  fill: var(--text-color1) !important;
-  color: var(--text-color1) !important;
+  fill: var(--gantt-task-text, var(--text-color1)) !important;
+  color: var(--gantt-task-text, var(--text-color1)) !important;
 }
 
 /* mermaid pie chart */
@@ -2003,11 +1985,24 @@ g.legend > text {
 }
 
 g.legend > rect {
-	stroke: var(--bg-color) !important;
+	stroke: var(--menu-divider-color) !important;
 }
 
-pre[mermaid-type='pie'] svg g > path { stroke: var(--bg-color) !important; }
-pre[mermaid-type='pie'] svg g > text.slice { fill: var(--bg-color) !important; }
+pre[mermaid-type='pie'] svg g > path { stroke: var(--menu-divider-color) !important; }
+
+/* Pie & Gantt text colors (theme-variable driven) */
+pre[mermaid-type='pie'] svg g > text.slice,
+pre[mermaid-type='pie'] svg g > text {
+  fill: var(--pie-text, var(--text-color1)) !important;
+  color: var(--pie-text, var(--text-color1)) !important;
+}
+
+pre[mermaid-type='gantt'] svg g > text,
+pre[mermaid-type='gantt'] svg text.taskText,
+pre[mermaid-type='gantt'] svg text.sectionTitle {
+  fill: var(--gantt-task-text, var(--text-color1)) !important;
+  color: var(--gantt-task-text, var(--text-color1)) !important;
+}
 
 /* flow diagram */
 .md-fences[lang='flow'] .md-diagram-panel-preview rect {

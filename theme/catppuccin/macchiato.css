@@ -25,4 +25,6 @@
   --base-rgb: 36,39,58; --base: rgb(var(--base-rgb));
   --mantle-rgb: 30,32,48; --mantle: rgb(var(--mantle-rgb));
   --crust-rgb: 24,25,38; --crust: rgb(var(--crust-rgb));
+  --pie-text: var(--base);
+  --gantt-task-text: var(--text-color1);
 }
