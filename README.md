@@ -38,7 +38,7 @@
 
 1. Download or clone this repo.
 2. Place the contents of the `theme` dir into the Typora theme directory.
-   - Open Typora and go to **Settings** > **Appearance** > **Open Theme Folder**.
+   - Open Typora and go to **Settings/Preferences** > **Appearance** > **Open Theme Folder**.
    - Make sure you have the catppuccin directory along with each flavor's CSS file.
 3. Select the theme from Typora in **Preferences** > **Appearance**.
 
