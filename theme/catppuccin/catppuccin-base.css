@@ -816,6 +816,7 @@ div[data-index='2'] .label-input-group td:last-child div {
 	margin-bottom: 10px !important;
 	margin-left: 10px !important;
 	background-color: var(--surface0) !important;
+	padding: 10px !important;
 }
 
 /* Placeholder text color for settings search input */
