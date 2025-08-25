@@ -1,5 +1,5 @@
 :root {
-  	/* --- background colors --- */
+	/* --- background colors --- */
 	--bg-color1: var(--base);
 	/* for most panel, context, header, etc */
 	--bg-color2: var(--crust);
@@ -226,7 +226,7 @@ blockquote blockquote {
 }
 
 /* --- tables --- */
-.md-rawblock > .md-rawblock-container table,
+.md-rawblock>.md-rawblock-container table,
 .md-table-fig,
 .md-table-fig:active {
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
@@ -310,7 +310,7 @@ table tr td:last-child {
 }
 
 /* arrow of adjusting table panel */
-.popover.bottom > .arrow:after {
+.popover.bottom>.arrow:after {
 	border-bottom-color: var(--bg-color2);
 }
 
@@ -354,7 +354,7 @@ table tr td:last-child {
 }
 
 /* task */
-.md-task-list-item > input {
+.md-task-list-item>input {
 	margin-left: -1.3em;
 }
 
@@ -373,18 +373,18 @@ sup.md-footnote {
 	opacity: 1;
 }
 
-.md-rawblock > .md-rawblock-container {
+.md-rawblock>.md-rawblock-container {
 	transition: 0.5s;
 }
 
-.md-rawblock > .md-rawblock-tooltip {
+.md-rawblock>.md-rawblock-tooltip {
 	transition: 0.5s;
 	display: block;
 	visibility: hidden;
 	opacity: 0;
 }
 
-.md-rawblock:hover > .md-rawblock-tooltip {
+.md-rawblock:hover>.md-rawblock-tooltip {
 	transition: 0.5s;
 	visibility: visible;
 	opacity: 1;
@@ -392,7 +392,7 @@ sup.md-footnote {
 }
 
 /* meta information of image */
-.md-image > .md-meta {
+.md-image>.md-meta {
 	border: 0px;
 	padding: 2px 0px 0px 4px;
 	font-size: 0.9em;
@@ -658,12 +658,14 @@ input[type='radio']:checked:hover:before {
 
 /* Active styling - higher specificity */
 #file-library div.file-list-item.active div.file-list-item-summary {
-	color: var(--subtext0); /* Ensure active color is the same as hover */
+	color: var(--subtext0);
+	/* Ensure active color is the same as hover */
 }
 
 /* Active + Hover state */
 #file-library div.file-list-item.active:hover div.file-list-item-summary {
-	color: var(--subtext0); /* Prevent hover from overriding active */
+	color: var(--subtext0);
+	/* Prevent hover from overriding active */
 }
 
 /* suffix of file item*/
@@ -678,11 +680,11 @@ input[type='radio']:checked:hover:before {
 }
 
 /* sidebar file menu item */
-.dropdown-menu > li > a {
+.dropdown-menu>li>a {
 	color: var(--text-color2);
 }
 
-.dropdown-menu > li > a:hover {
+.dropdown-menu>li>a:hover {
 	color: var(--hover-text-color);
 }
 
@@ -692,7 +694,7 @@ input[type='radio']:checked:hover:before {
 }
 
 /* sidebar file menu divider */
-#sidebar-files-menu > .show + .menuitem-group-label.show {
+#sidebar-files-menu>.show+.menuitem-group-label.show {
 	border-color: var(--menu-divider-color);
 }
 
@@ -706,23 +708,29 @@ input[type='radio']:checked:hover:before {
 	color: var(--hover-text-color);
 }
 
+#file-library-search-input {
+	color: var(--mauve);
+}
+
 /* sidebar osx tab */
-.html-for-mac .sidebar-osx-tab > .sidebar-tabs {
+.html-for-mac .sidebar-osx-tab>.sidebar-tabs {
 	border: 0px;
 	font-weight: bold;
 	background-color: var(--bg-color2);
 }
 
 .html-for-mac .sidebar-content {
-	z-index: -1; /* so that the background doesn't overlap with the shadow */
+	z-index: -1;
+	/* so that the background doesn't overlap with the shadow */
 }
 
 /* sidebar footer */
 .sidebar-footer {
-	border: 0px;}
+	border: 0px;
+}
 
 /* remove outline when file item in treeview is selected*/
-.file-library-node:not(.file-node-root):focus > .file-node-content {
+.file-library-node:not(.file-node-root):focus>.file-node-content {
 	outline: none;
 }
 
@@ -807,7 +815,13 @@ div[data-index='2'] .label-input-group td:last-child div {
 	margin-top: 10px !important;
 	margin-bottom: 10px !important;
 	margin-left: 10px !important;
-	background-color: var(--mantle) !important;
+	background-color: var(--surface0) !important;
+}
+
+/* Placeholder text color for settings search input */
+.search-input::placeholder {
+	color: var(--subtext0) !important;
+	opacity: 0.9;
 }
 
 .search-input:focus {
@@ -1486,13 +1500,27 @@ pre.md-meta-block:active {
 	color: var(--hover-text-color);
 }
 
+/* sidebar tab titles */
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+	color: var(--mauve) !important;
+}
+
+.active-tab-files .info-panel-tab-border,
+.active-tab-outline .info-panel-tab-border {
+	background-color: var(--mauve) !important;
+	border-color: var(--mauve) !important;
+}
+
 /* sidebar title hover */
 .info-panel-tab:hover {
 	color: var(--hover-text-color) !important;
 }
 
 /* active file in sidebar file menu treeview */
-.file-tree-node.active > .file-node-background {
+.file-tree-node.active>.file-node-background {
 	background-color: var(--hover-bg-color1);
 }
 
@@ -1524,8 +1552,8 @@ pre.md-meta-block:active {
 
 /* Mermaid v10 edge path */
 .md-fences[lang='mermaid'] svg path.flowchart-link {
-  stroke: var(--menu-divider-color) !important;
-  fill: none !important;
+	stroke: var(--menu-divider-color) !important;
+	fill: none !important;
 }
 
 .edgePath .arrowheadPath {
@@ -1534,20 +1562,21 @@ pre.md-meta-block:active {
 
 /* Arrowheads drawn via <marker> */
 .md-fences[lang='mermaid'] svg marker path {
-  fill: var(--menu-divider-color) !important;
-  stroke: var(--menu-divider-color) !important;
+	fill: var(--menu-divider-color) !important;
+	stroke: var(--menu-divider-color) !important;
 }
 
 .edgeLabel rect {
-  fill: none !important;   /* hide SVG box to avoid ghost boxes */
-  stroke: none !important;
+	fill: none !important;
+	/* hide SVG box to avoid ghost boxes */
+	stroke: none !important;
 }
 
 .edgeLabel text,
 .edgeLabel tspan {
-  fill: var(--text-color1) !important;
-  color: var(--text-color1) !important;
-  font-weight: 500;
+	fill: var(--text-color1) !important;
+	color: var(--text-color1) !important;
+	font-weight: 500;
 }
 
 /* Consolidated Mermaid label colors (SVG + foreignObject) */
@@ -1557,7 +1586,7 @@ pre.md-meta-block:active {
 .md-fences[lang='mermaid'] svg .label tspan,
 .md-fences[lang='mermaid'] svg .nodeLabel text,
 .md-fences[lang='mermaid'] svg .nodeLabel tspan {
-  fill: var(--text-color1) !important;
+	fill: var(--text-color1) !important;
 }
 
 .md-fences[lang='mermaid'] svg foreignObject,
@@ -1565,26 +1594,31 @@ pre.md-meta-block:active {
 .md-fences[lang='mermaid'] svg .nodeLabel,
 .md-fences[lang='mermaid'] svg .nodeLabel div,
 .md-fences[lang='mermaid'] svg .label div,
-.md-fences[lang='mermaid'] svg .edgeLabel foreignObject > div {
-  color: var(--text-color1) !important;
+.md-fences[lang='mermaid'] svg .edgeLabel foreignObject>div {
+	color: var(--text-color1) !important;
 }
 
 /* Edge labels rendered via foreignObject (Mermaid v9/v10, all diagram types) */
-.md-fences[lang='mermaid'] svg g.edgeLabel foreignObject > div,
-.md-fences[lang='mermaid'] svg .edgeLabel foreignObject > div {
-  background-color: transparent !important; /* no background */
-  color: var(--text-color1) !important;     /* readable text */
-  padding: 0 !important;                    /* avoid added size */
-  border: none !important;                  /* no border */
-  border-radius: 0 !important;              /* no rounding */
-  line-height: 1.2;
-  box-shadow: none !important;
+.md-fences[lang='mermaid'] svg g.edgeLabel foreignObject>div,
+.md-fences[lang='mermaid'] svg .edgeLabel foreignObject>div {
+	background-color: transparent !important;
+	/* no background */
+	color: var(--text-color1) !important;
+	/* readable text */
+	padding: 0 !important;
+	/* avoid added size */
+	border: none !important;
+	/* no border */
+	border-radius: 0 !important;
+	/* no rounding */
+	line-height: 1.2;
+	box-shadow: none !important;
 }
 
 /* Hide truly empty foreignObject labels to avoid tiny ghost boxes */
-.md-fences[lang='mermaid'] svg g.edgeLabel foreignObject > div:empty,
-.md-fences[lang='mermaid'] svg .edgeLabel foreignObject > div:empty {
-  display: none !important;
+.md-fences[lang='mermaid'] svg g.edgeLabel foreignObject>div:empty,
+.md-fences[lang='mermaid'] svg .edgeLabel foreignObject>div:empty {
+	display: none !important;
 }
 
 .cluster rect {
@@ -1644,7 +1678,7 @@ rect[class*='activation'] {
 }
 
 .loopLine {
-  stroke: var(--menu-divider-color) !important;
+	stroke: var(--menu-divider-color) !important;
 }
 
 .note {
@@ -1861,12 +1895,12 @@ text.legend {
 	fill: var(--text-color1) !important;
 }
 
-pre[mermaid-type='journey'] svg > line {
+pre[mermaid-type='journey'] svg>line {
 	stroke: var(--menu-divider-color) !important;
 	stroke-width: 2px !important;
 }
 
-pre[mermaid-type='journey'] svg > text {
+pre[mermaid-type='journey'] svg>text {
 	fill: var(--text-color1) !important;
 }
 
@@ -1879,7 +1913,7 @@ circle.face {
 	stroke: var(--text-color1) !important;
 }
 
-circle.face + g > circle {
+circle.face+g>circle {
 	fill: var(--text-color1) !important;
 	stroke: var(--text-color1) !important;
 }
@@ -1971,8 +2005,8 @@ text.sectionTitle tspan {
 .md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText1,
 .md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText2,
 .md-fences[lang='mermaid'] svg[id^='mermaidChart']:not(#x) .activeText3 {
-  fill: var(--gantt-task-text, var(--text-color1)) !important;
-  color: var(--gantt-task-text, var(--text-color1)) !important;
+	fill: var(--gantt-task-text, var(--text-color1)) !important;
+	color: var(--gantt-task-text, var(--text-color1)) !important;
 }
 
 /* mermaid pie chart */
@@ -1980,28 +2014,30 @@ text.sectionTitle tspan {
 	fill: var(--text-color1) !important;
 }
 
-g.legend > text {
+g.legend>text {
 	fill: var(--text-color1) !important;
 }
 
-g.legend > rect {
+g.legend>rect {
 	stroke: var(--menu-divider-color) !important;
 }
 
-pre[mermaid-type='pie'] svg g > path { stroke: var(--menu-divider-color) !important; }
-
-/* Pie & Gantt text colors (theme-variable driven) */
-pre[mermaid-type='pie'] svg g > text.slice,
-pre[mermaid-type='pie'] svg g > text {
-  fill: var(--pie-text, var(--text-color1)) !important;
-  color: var(--pie-text, var(--text-color1)) !important;
+pre[mermaid-type='pie'] svg g>path {
+	stroke: var(--menu-divider-color) !important;
 }
 
-pre[mermaid-type='gantt'] svg g > text,
+/* Pie & Gantt text colors (theme-variable driven) */
+pre[mermaid-type='pie'] svg g>text.slice,
+pre[mermaid-type='pie'] svg g>text {
+	fill: var(--pie-text, var(--text-color1)) !important;
+	color: var(--pie-text, var(--text-color1)) !important;
+}
+
+pre[mermaid-type='gantt'] svg g>text,
 pre[mermaid-type='gantt'] svg text.taskText,
 pre[mermaid-type='gantt'] svg text.sectionTitle {
-  fill: var(--gantt-task-text, var(--text-color1)) !important;
-  color: var(--gantt-task-text, var(--text-color1)) !important;
+	fill: var(--gantt-task-text, var(--text-color1)) !important;
+	color: var(--gantt-task-text, var(--text-color1)) !important;
 }
 
 /* flow diagram */
